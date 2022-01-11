@@ -6,12 +6,21 @@
 				<div class="form__name">
 					<p>Name Task</p>
 					<label for="name"></label>
-					<input type="text" id="name" placeholder="Write you name task" />
+					<input type="text" id="name" />
 				</div>
 				<div class="form__importance">
 					<p>Importance</p>
 					<label for="importance"></label>
-					<progress id="importance" value="0" max="100"></progress>
+					<div class="container">
+						<div>
+							<p>Baja</p>
+							<input type="radio" id="importance" value="Baja" />
+						</div>
+						<div>
+							<p>Alta</p>
+							<input type="radio" id="importance" value="Alta" />
+						</div>
+					</div>
 				</div>
 				<div class="form__colour">
 					<p>Colour Task</p>
@@ -38,21 +47,37 @@ export default {};
 	display: grid;
 	grid-template-columns: 25rem 15rem;
 	.img-form {
-		background-image: url("../assets/imgForm.jpg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: top center;
-		border-radius: 25px 0 0 25px;
+		background-color: #b762c1;
 	}
 	.form {
-		background: #323232;
-		border-radius: 0 25px 25px 0;
+		background: #7900ff;
+		font-family: monospace;
+		color: #fff;
+		letter-spacing: 2px;
+		font-weight: 700;
 		width: 90%;
 		max-width: 30rem;
 		padding: 1rem;
 		display: grid;
 		grid-template-columns: 1fr;
 		justify-items: center;
+
+		.form__name {
+			input {
+				border: 2px solid #fff;
+				background-color: #b862c100;
+				border-radius: 15px;
+				height: 1.5rem;
+				outline: none;
+				padding: 0.3rem 1rem;
+			}
+		}
+		.form__importance {
+			.container {
+				display: flex;
+				gap: 1rem;
+			}
+		}
 		.form__btn {
 			display: block;
 			margin: 2.5rem auto 0 auto;
